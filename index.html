@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCo_dMIIuHMswJUWTq9VFSCESK2lvfzAe0",
+          authDomain: "weather-18me.firebaseapp.com",
+          projectId: "weather-18me",
+          storageBucket: "weather-18me.appspot.com",
+          messagingSenderId: "697727886736",
+          appId: "1:697727886736:web:0df5a6b5174731741bbf15",
+          measurementId: "G-ZSXXS1E3C9"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <div class="background-container">
+        <header>
+            <h1>Weather Forecast Site</h1>
+        </header>
+        <div id="map"></div>
+        <div id="weatherInfo">
+            <h2>Weather Forecast</h2>
+            <div id="locationInputContainer">
+                <label for="locationInput" style="color: black;">Enter Location:</label>
+                <input type="text" id="locationInput" placeholder="E.g., Chennai">
+                <button id="searchButton">Search</button>
+            </div>
+            <div id="weatherTableContainer">
+                <table id="weatherTable"></table>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2023 Weather Forecast Site - Manoj E</p>
+        </footer>
+    </div>
+
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+    <script src="weather.js"></script>
+</body>
+</html>
